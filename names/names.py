@@ -56,18 +56,18 @@ duplicates = []  # Return the list of duplicates in this data structure
 #         if name_1 == name_2:
 #             duplicates.append(name_1)
 
-unique = BSTNode('')
+tree = BSTNode('')
 
 for name in names_1:
-    unique.insert(name)
+    tree.insert(name)
 
 
 for name in names_2:
-    if unique.contains(name):
+    if tree.contains(name):
         duplicates.append(name)
 
-# runtime: 0.11041688919067383 seconds
-# runtime: 0.11278533935546875 seconds
+# runtime: 0.10765194892883301 seconds
+# runtime: 0.10999011993408203 seconds
 # runtime: 0.10889410972595215 seconds
 end_time = time.time()
 print(f"{len(duplicates)} duplicates:\n\n{', '.join(duplicates)}\n\n")
@@ -77,14 +77,14 @@ print(f"runtime: {end_time - start_time} seconds")
 # Python has built-in tools that allow for a very efficient approach to this problem
 # What's the best time you can accomplish?  Thare are no restrictions on techniques or data
 # structures, but you may not import any additional libraries that you did not write yourself.
-print(duplicates)
 
-# duplicates = [x for x in names_1 if x in names_2]
+duplicates = [x for x in names_1 if x in names_2]
 # runtime: 1.2967967987060547 seconds
 # runtime: 1.30289626121521 seconds
 # runtime: 1.3207600116729736 seconds
 
-# duplicates = set(names_1).intersection(names_2)
+dif = set(names_1).intersection(names_2)
+duplicates = list(dif)
 # runtime: 0.0033071041107177734 seconds
 # runtime: 0.003323078155517578 seconds
 # runtime: 0.0034821033477783203 seconds
